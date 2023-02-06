@@ -21,3 +21,5 @@ os.system('cd reports && del * /q && cd ..')
 # os.system('cd ./logs && del * /q')
 
 pytest.main(['testcases/huarun999/test_huarun999_middle.py','-s','-v','--alluredir=reports'])
+
+#测试分支
