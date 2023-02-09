@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Time:2022/8/18 14:14
 # @Author:lucky
@@ -10,4 +11,5 @@ class Data:
     使用方式,将上一个接口返回的数据,提取后,保存为此类的类属性
     下一个接口要进行数据替换时,从此类中匹配
     """
-    pass
+    username = 'admin'
+    password='4nuL1fAvAPech6Kj/s+x4g=='
