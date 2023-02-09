@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Time:2021/6/21 16:11
 # @Author:lucky
