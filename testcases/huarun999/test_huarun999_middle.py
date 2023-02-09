@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Time:2022/8/18 12:23
 # @Author:lucky
@@ -27,7 +28,7 @@ class TestPsmApi:
 
     @allure.epic("华润999中台")
     @pytest.mark.parametrize('cases', data)
-    def test_psm_api(self, cases, test_data_clear,false=''):
+    def test_psm_api(self, cases,false=''):
 
         # 打印当前执行的用例信息
         # print('当前执行的用例是：【{}】-【{}】-【{}】-【{}】'.format(cases['module'],cases['sub_module'],cases['case_id'],cases['title']))
