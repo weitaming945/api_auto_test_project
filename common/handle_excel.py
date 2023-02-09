@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Time:2021/8/2 14:22
 # @Author:lucky
@@ -63,7 +64,6 @@ class HandleExcel:
         #所有的sheet，返回为列表
         # sheets=workbook.get_sheet_names()
         sheets=workbook.sheetnames
-        # print(sheets)
         #定义一个空列表，用于接收从excel中取的数据
         cases_api =[]
 
@@ -76,10 +76,8 @@ class HandleExcel:
                 sheet = workbook[self.sheetname]
                 # 获取表单中所有行
                 res = list(sheet.rows)
-                # print(res) # [(<Cell 'Sheet1'.A1>, <Cell 'Sheet1'.B1>
                 # 获取表单中第一行的值，返回list
                 title = [i.value for i in res[0]]
-                # print(title)
                 # 建一个空list，用来保存第一行与其他行组合的字典值
                 # 取除第一行外的其他行的值
                 for item in res[1:]:
@@ -161,10 +159,10 @@ if __name__ == '__main__':
     from common.handle_path import data_dir
 
     # 读excel数据
-    test_data = HandleExcel(os.path.join(data_dir, 'psm.xlsx'))
+    test_data = HandleExcel(os.path.join(data_dir, 'huarun999/huarun999_middle.xlsx'))
     # 生成测试数据
     data = test_data.read_excel_api_cases()
-    # print(data)
+    print(data)
     print(test_data)
 
 
