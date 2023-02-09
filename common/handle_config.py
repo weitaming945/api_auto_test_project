@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 # @Time:2021/8/3 11:34
 # @Author:lucky
@@ -51,6 +52,5 @@ class HandleConfig(ConfigParser):
 conf = HandleConfig(os.path.join(conf_dir,"config.ini"))
 
 if __name__ == '__main__':
-    name = conf.get("test_data","psm_username")
-    # url = conf.get("url", "url")
+    name = conf.get("test_data","username")
     print(name)
