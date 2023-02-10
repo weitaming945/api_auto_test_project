@@ -1,0 +1,7 @@
+requests
+openpyxl
+pymysql
+python-jenkins
+pytest-json-report
+pytest
+allure-pytest
