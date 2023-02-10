@@ -20,7 +20,7 @@ class JenkinsConnect:
     def jenkins_connect(self):
         try:
             server=jenkins.Jenkins(url=self.jenkins_url,username=self.jenkins_username,password=self.jenkins_pwd)
-            print(self.jenkins_url)
+            # print(self.jenkins_url)
             return server
         except Exception as e:
             log.error("连接jenkins服务器失败，失败原因{}".format(e))
@@ -40,7 +40,7 @@ class JenkinsConnect:
         num = self.get_project_run_info(projectname,key)
         if num:
             #报告地址参考：http://172.29.95.187:9999/job/auto_test_sanjiu_project/7/allure/
-            allure_address=self.jenkins_url+"/job/projectname/{}/allure/".format(num-1)
+            allure_address=self.jenkins_url+"/job/{}/{}/allure/".format(projectname,num-1)
             return allure_address
         else:
             return None
@@ -51,5 +51,4 @@ if __name__ == '__main__':
     projectname=conf.get("jenkins","project_name")
     value=jenk.get_allure_address(projectname=projectname,key="nextBuildNumber")
     print(value)
-    # jenk.jenkins_connect()
 
