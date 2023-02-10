@@ -45,3 +45,7 @@ print(address)
 
 #发送企业微信消息
 robot.sendMessage(projectname=projectname,total=total,passed=passed,skipped=skipped,failed=failed,address=address)
+
+
+
+？？？
