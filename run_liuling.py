@@ -26,7 +26,7 @@ os.system('cd reports && del * /q && cd ..')
 
 #需要生成结果文件，不然jenkins识别不出来
 plugin=JSONReport()
-
+# 报告存放的位置
 pytest.main(['testcases/huarun999/test_huarun999_middle.py','-s','-v','--alluredir=reports'],plugins=[plugin])
 
 summary=plugin.report.get("summary")
