@@ -23,7 +23,7 @@ test_data = HandleExcel(os.path.join(data_dir, 'huarun999/huarun999_middle.xlsx'
 # 生成测试数据
 data = test_data.read_excel_api_cases()
 print(data)
-class TestPsmApi:
+class TestProjectApi:
 
 
     @allure.epic("华润999中台")
