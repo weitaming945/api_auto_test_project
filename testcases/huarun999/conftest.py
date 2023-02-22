@@ -19,7 +19,7 @@ from common.handle_re import get_attr,replace_data
 from common.handle_dynamic_data import Data
 import time
 from common.handle_sql import db
-
+from common.handle_data import get_noncestr,get_signature,get_timestamp
 
 
 @pytest.fixture(scope='class')
@@ -68,9 +68,6 @@ def test_data_clear():
 
 #退出登录
 def test_huarun_logout():
-    #生成13位时间戳
-    timestamp=int(time.time()*1000)
-    # print(timestamp) #1663143037993
 
     logout_data={""}
     logout_url=conf.get("url","url_admin")+"/sys/logout"
@@ -79,6 +76,21 @@ def test_huarun_logout():
     res = requests.request(method=logout_method,json="",headers=logout_headers, url=logout_url)
     res = res.json()
     print(res)
+
+@pytest.fixture(scope = 'function')
+def test_login_headers():
+    """
+    每次登录前需要生成不同的参数
+    """
+    # 针对华润项目，请求头特殊处理，每次请求前，需要动态获取请求头中的值，要不然会报错
+    # noncestr = getNoncestr()
+    SIGN_KEY = "cf37fHp7zY2wRB7fa5KcDb31cdUFc8a5fc"
+    # timestamp=get_timestamp()
+    get_timestamp()
+    get_noncestr()
+    get_signature(noncestr=get_noncestr(), timestamp=get_timestamp(), SIGN_KEY=SIGN_KEY)
+    yield
+    pass
 
 
 if __name__ == '__main__':
