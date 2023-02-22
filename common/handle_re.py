@@ -9,29 +9,7 @@ from common.handle_config import conf
 from jsonpath import jsonpath
 import json
 from common.handle_dynamic_data import Data
-
-
-
-# # 测试类中找不到时，配置文件中找
-#
-# def replace_data(data, cls):
-#     """
-#     替换数据的方法
-#     :param data: 要进行替换的用例数据（字符串）
-#     :param cls: 测试类
-#     :return:
-#     """
-#     while re.search('#(.+?)#',data): # while为true时，循环执行
-#         res = re.search('#(.+?)#',data) # 返回类
-#         item = res.group() #  获取第一个#中的内容 比如 #id#
-#         attr = res.group(1) # 获取到的#内的内容，比如 id
-#         try:
-#             value = getattr(cls,attr) # 获取到类中定义的属性值
-#         except AttributeError:
-#             value = conf.get('test_data',attr) # 从配置文件中找
-#         data = data.replace(item,str(value)) # 将字符串中的与类中的属性值做替换
-#     return data
-
+from common.handle_log import log
 
 def replace_data(data):
     """
@@ -61,14 +39,11 @@ def get_attr(response_data,json_exp,attr_name):
     """
     try:
         attr_value=jsonpath(response_data,json_exp)[0]
-    # print(type(attr_value)) #默认返回是列表
-    #     print(type(attr_value))
     except Exception as e:
-        print('获取属性值失败')
+        log.info("获取属性值失败")
         raise e
     else:
         setattr(Data,attr_name,attr_value)
-
     return attr_value
 
 
