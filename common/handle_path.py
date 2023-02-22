@@ -39,3 +39,6 @@ reports_dir = os.path.join(base_dir, "reports")
 
 # 测试数据所在目录
 testcases_dir = os.path.join(base_dir, "testcases")
+
+# 上传文件目录
+upload_file=os.path.join(base_dir,"uploadfile")
