@@ -8,7 +8,6 @@
 import math
 import random
 import hashlib
-import time
 from common.handle_dynamic_data import Data
 import time
 

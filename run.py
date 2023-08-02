@@ -21,4 +21,4 @@ os.system('cd reports && del * /q && cd ..')
 # log.info("清空日志文件")
 # os.system('cd ./logs && del * /q')
 
-pytest.main(['testcases/api/test_huarun999.py','-s','-v','--alluredir=reports'])
+pytest.main(['testcases/huarun999/test_huarun999_middle.py','-s','-v','--alluredir=reports'])

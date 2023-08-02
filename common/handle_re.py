@@ -6,8 +6,7 @@
 # @File:handle_re.py
 import re
 from common.handle_config import conf
-from jsonpath import jsonpath
-import json
+import jsonpath
 from common.handle_dynamic_data import Data
 from common.handle_log import log
 
